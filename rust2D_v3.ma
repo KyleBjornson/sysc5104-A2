@@ -3,6 +3,10 @@
 [top]
 components : rust
 
+%components : rustIncident@rustIncident 
+%out : incidentRustOut 
+%Link : incidentRustOut@rustIncident incidentRustOut
+
 [rust]
 type : cell
 
@@ -80,14 +84,14 @@ rule : { round(uniform(1,4)) } 100 { #macro(isCellRusty) }
 rule : { 1 } 100 { not #macro(isCellRusty) }
 
 [rust-zone]
-rule : { (0,0,0) + 1 } 100 { (-1,-1,1) = 8 and #macro(Rustable) }
-rule : { (0,0,0) + 1 } 100 { (-1,0,1) = 7 and #macro(Rustable) }
-rule : { (0,0,0) + 1 } 100 { (-1,1,1) = 6 and #macro(Rustable) }
-rule : { (0,0,0) + 1 } 100 { (0,-1,1) = 5 and #macro(Rustable) }
-rule : { (0,0,0) + 1 } 100 { (0,1,1) = 4 and #macro(Rustable) }
-rule : { (0,0,0) + 1 } 100 { (1,-1,1) = 3 and #macro(Rustable) }
-rule : { (0,0,0) + 1 } 100 { (1,0,1) = 2 and #macro(Rustable) }
-rule : { (0,0,0) + 1 } 100 { (1,1,1) = 1 and #macro(Rustable) }
+rule : { (0,0,0) + 1 } { 100 + #macro(delayRandomizer) } { (-1,-1,1) = 8 and #macro(Rustable) }
+rule : { (0,0,0) + 1 } { 100 + #macro(delayRandomizer) } { (-1,0,1) = 7 and #macro(Rustable) }
+rule : { (0,0,0) + 1 } { 100 + #macro(delayRandomizer) } { (-1,1,1) = 6 and #macro(Rustable) }
+rule : { (0,0,0) + 1 } { 100 + #macro(delayRandomizer) } { (0,-1,1) = 5 and #macro(Rustable) }
+rule : { (0,0,0) + 1 } { 100 + #macro(delayRandomizer) } { (0,1,1) = 4 and #macro(Rustable) }
+rule : { (0,0,0) + 1 } { 100 + #macro(delayRandomizer) } { (1,-1,1) = 3 and #macro(Rustable) }
+rule : { (0,0,0) + 1 } { 100 + #macro(delayRandomizer) } { (1,0,1) = 2 and #macro(Rustable) }
+rule : { (0,0,0) + 1 } { 100 + #macro(delayRandomizer) } { (1,1,1) = 1 and #macro(Rustable) }
 
-rule : { (0,0,0) } 100 { (0,0,0) >= 90 }
+rule : { (0,0,0) } 100 { (0,0,0) >= 90 } %Can't rust anymore
 rule : { (0,0,0) } 100 { t }

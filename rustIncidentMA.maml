@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDPlusPlus_Builder_Version_1.0.0>
+  <top>
+    <components> rustIncident@rustIncident &#xd;</components>
+    <out> incidentRustOut &#xd;</out>
+    <Link> incidentRustOut@rustIncident incidentRustOut&#xd;</Link>
+  </top>
+</CDPlusPlus_Builder_Version_1.0.0>
