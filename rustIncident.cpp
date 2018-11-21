@@ -35,7 +35,7 @@ RustIncident::RustIncident( const string &name )
 ********************************************************************/
 Model &RustIncident::initFunction()
 {
-	randomOutput = rand() % 100;
+	randomOutput = rand() % 1000;
 	holdIn(active, Time::Zero);
 	return *this ;
 }
@@ -53,8 +53,8 @@ Model &RustIncident::externalFunction( const ExternalMessage &msg )
 ********************************************************************/
 Model &RustIncident::internalFunction( const InternalMessage & ){
 
-	randomOutput = rand() % 100;
-	holdIn(active, Time(0,0,0,100));
+	randomOutput = rand() % 1000;
+	holdIn(active, Time(0,0,1,0));
 	return *this ;
 }
 
@@ -66,10 +66,9 @@ Model &RustIncident::outputFunction( const InternalMessage &msg ){
 		std::cout << "Random: " << randomOutput <<"\n";
 	#endif
 
-	if (randomOutput == 50) {
+	if (randomOutput == 500) {
 		sendOutput( msg.time(), incidentRustOut, 1);
-	} else {
-		sendOutput( msg.time(), incidentRustOut, 0);
 	}
+
 	return *this ;
 }
