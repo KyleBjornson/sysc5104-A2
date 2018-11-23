@@ -11,5 +11,21 @@
 #EndMacro
 
 #BeginMacro(fullNeighborCheck)
-(0,0,-1) < 90 or (-1,-1,-1) < 90 or (-1,0,-1) < 90 or (-1,1,-1) < 90 or (0,-1,-1) < 90 or (0,1,-1) < 90 or (1,-1,-1) < 90 or (1,0,-1) < 90 or (1,1,-1) < 90
+(0,0,-1) = 90 and (-1,-1,-1) = 90 and (-1,0,-1) = 90 and (-1,1,-1) = 90 and (0,-1,-1) = 90 and (0,1,-1) = 90 and (1,-1,-1) = 90 and (1,0,-1) = 90 and (1,1,-1) = 90
+#EndMacro
+
+#BeginMacro(leftEdgeNeighborCheck)
+(0,0,-1) = 90 and (0,-1,-1) = 90 and (0,1,-1) = 90 and (1,-1,-1) = 90 and (1,0,-1) = 90 and (1,1,-1) = 90
+#EndMacro
+
+#BeginMacro(rightEdgeNeighborCheck)
+(0,0,-1) = 90 and (-1,-1,-1) = 90 and (-1,0,-1) = 90 and (-1,1,-1) = 90 and (0,-1,-1) = 90 and (0,1,-1) = 90
+#EndMacro
+
+#BeginMacro(topEdgeNeighborCheck)
+(0,0,-1) = 90 and (-1,0,-1) = 90 and (-1,1,-1) = 90 and (0,1,-1) = 90 and (1,0,-1) = 90 and (1,1,-1) = 90
+#EndMacro
+
+#BeginMacro(bottomEdgeNeighborCheck)
+(0,0,-1) = 90 and (-1,-1,-1) = 90 and (-1,0,-1) = 90 and (0,-1,-1) = 90 and (1,-1,-1) = 90 and (1,0,-1) = 90
 #EndMacro
