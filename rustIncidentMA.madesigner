@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.example.org/DEVSModeler" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation">
+  <CoupledModelType xmi:id="_X_VSAO84EeiIzOpjTdWXlA" modelName="top" defined="true" sourceFileRelativePath="rustIncidentMA.ma">
+    <ports xmi:type="CoupledPort" xmi:id="_X_V5EO84EeiIzOpjTdWXlA" portName="incidentRustOut" portType="OUTPUT_PORT" incomingLinks="_X_V5FO84EeiIzOpjTdWXlA"/>
+    <atomicModels xmi:type="AtomicModelInstance" xmi:id="_X_V5Ee84EeiIzOpjTdWXlA" instanceName="rustIncident">
+      <modelType xmi:type="CPPAtomicModelType" xmi:id="_X_V5Eu84EeiIzOpjTdWXlA" modelName="RustIncident" defined="true" sourceFileRelativePath="rustIncident.cpp">
+        <ports xmi:type="OutputAtomicPort" xmi:id="_X_V5E-84EeiIzOpjTdWXlA" portName="incidentRustOut" portType="OUTPUT_PORT" outgoingLinks="_X_V5FO84EeiIzOpjTdWXlA"/>
+      </modelType>
+    </atomicModels>
+    <links xmi:type="CoupledLink" xmi:id="_X_V5FO84EeiIzOpjTdWXlA" target="_X_V5EO84EeiIzOpjTdWXlA" source="_X_V5E-84EeiIzOpjTdWXlA"/>
+  </CoupledModelType>
+  <notation:Diagram xmi:id="_X_V5Fe84EeiIzOpjTdWXlA" type="DEVS" element="_X_VSAO84EeiIzOpjTdWXlA" name="rustIncidentMA.madesigner" measurementUnit="Pixel">
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_X_V5Fu84EeiIzOpjTdWXlA"/>
+  </notation:Diagram>
+</xmi:XMI>

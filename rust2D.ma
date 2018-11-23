@@ -23,7 +23,9 @@ neighbors : rust(1,-1,0)  rust(1,0,0)  rust(1,1,0)
 neighbors : rust(-1,-1,1) rust(-1,0,1) rust(-1,1,1) 
 neighbors : rust(0,-1,1)  rust(0,0,1)  rust(0,1,1)
 neighbors : rust(1,-1,1)  rust(1,0,1)  rust(1,1,1)
-neighbors : rust(0,0,-1)
+neighbors : rust(-1,-1,-1) rust(-1,0,-1) rust(-1,1,-1) 
+neighbors : rust(0,-1,-1)  rust(0,0,-1)  rust(0,1,-1)
+neighbors : rust(1,-1,-1)  rust(1,0,-1)  rust(1,1,-1)
 
 initialvalue : 0
 
@@ -42,7 +44,8 @@ zone : arbiter-bottomLeftCorner { (0,19,1) }
 zone : arbiter-bottomRightCorner { (19,19,1) }
 
 [incidentRust]
-rule : { (0,0,0) + portValue(thisPort) } 100 { t }
+rule : { (0,0,0) + portValue(thisPort) } 100 { #macro(Rustable) }
+rule : { (0,0,0) } 100 { t }
 
 % Arbiter selects cell around it given this scheme
 % -------------
@@ -53,8 +56,8 @@ rule : { (0,0,0) + portValue(thisPort) } 100 { t }
 % | 6 | 7 | 8 |
 % -------------
 [arbiter-middle] %All 8 neighbors available for rust to spread to.
-rule : { round(uniform(1,8)) } 100 { #macro(isCellRusty) }
-rule : { 0 } 100 { not #macro(isCellRusty) }
+rule : { round(uniform(1,8)) } 100 { #macro(isCellRusty) and #macro(fullNeighborCheck) }
+rule : { 0 } 100 { t }
 
 [arbiter-leftEdge] % 5 neighbors (2,3,5,7,8) **Random selection imperfect
 rule : { round(uniform(2,8)) } 100 { #macro(isCellRusty) }
