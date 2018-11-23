@@ -29,3 +29,19 @@
 #BeginMacro(bottomEdgeNeighborCheck)
 (0,0,-1) = 90 and (-1,-1,-1) = 90 and (-1,0,-1) = 90 and (0,-1,-1) = 90 and (1,-1,-1) = 90 and (1,0,-1) = 90
 #EndMacro
+
+#BeginMacro(topLeftCornerNeighborCheck)
+(0,0,-1) = 90 and (0,1,-1) = 90 and (1,0,-1) = 90 and (1,1,-1) = 90
+#EndMacro
+
+#BeginMacro(topRightCornerNeighborCheck)
+(0,0,-1) = 90 and (-1,0,-1) = 90 and (-1,1,-1) = 90 and (0,1,-1) = 90
+#EndMacro
+
+#BeginMacro(bottomLeftCornerNeighborCheck)
+(0,0,-1) = 90 and (0,-1,-1) = 90 and (1,-1,-1) = 90 and (1,0,-1) = 90
+#EndMacro
+
+#BeginMacro(bottomRightCornerNeighborCheck)
+(0,0,-1) = 90 and (-1,-1,-1) = 90 and (-1,0,-1) = 90 and (0,-1,-1) = 90
+#EndMacro

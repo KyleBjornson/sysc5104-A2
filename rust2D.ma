@@ -100,18 +100,22 @@ rule : { round(uniform(1,5)) } 100 { #macro(isCellRusty) }
 rule : { 0 } 100 { not #macro(isCellRusty) }
 
 [arbiter-topLeftCorner] %3 neighbors (5,7,8) **Random selection imperfect
+rule : { 0 } 100 { #macro(topLeftCornerNeighborCheck) }
 rule : { round(uniform(5,8)) } 100 { #macro(isCellRusty) }
 rule : { 0 } 100 { not #macro(isCellRusty) }
 
 [arbiter-topRightCorner] %3 neighbors (4,6,7) **Random selection imperfect
+rule : { 0 } 100 { #macro(topRightCornerNeighborCheck) }
 rule : { round(uniform(4,7)) } 100 { #macro(isCellRusty) }
 rule : { 0 } 100 { not #macro(isCellRusty) }
 
 [arbiter-bottomLeftCorner] %3 neighbors (2,3,5) **Random selection imperfect
+rule : { 0 } 100 { #macro(bottomLeftCornerNeighborCheck) }
 rule : { round(uniform(2,5)) } 100 { #macro(isCellRusty) }
 rule : { 0 } 100 { not #macro(isCellRusty) }
 
 [arbiter-bottomRightCorner] %3 neighbors (1,2,4) **Random selection imperfect
+rule : { 0 } 100 { #macro(bottomRightCornerNeighborCheck) }
 rule : { round(uniform(1,4)) } 100 { #macro(isCellRusty) }
 rule : { 0 } 100 { not #macro(isCellRusty) }
 
